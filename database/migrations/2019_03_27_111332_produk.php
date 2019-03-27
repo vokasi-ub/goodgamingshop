@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMousepad extends Migration
+class Produk extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateMousepad extends Migration
      */
     public function up()
     {
-        Schema::create('mousepad', function (Blueprint $table) {
-            $table->bigIncrements('id_mousepad');
+        Schema::create('produk', function (Blueprint $table) {
+            $table->bigIncrements('id_produk');
             $table->integer('id_brand');
-            $table->string('nama_mousepad',100);
+            $table->integer('id_kategori');
+            $table->string('nama_produk',100);
             $table->text('deskripsi');
             $table->integer('harga');
         });
@@ -29,6 +30,6 @@ class CreateMousepad extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mousepad');
+         Schema::dropIfExists('produk');
     }
 }

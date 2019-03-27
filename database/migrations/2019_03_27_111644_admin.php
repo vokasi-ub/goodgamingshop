@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMouse extends Migration
+class Admin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateMouse extends Migration
      */
     public function up()
     {
-        Schema::create('mouse', function (Blueprint $table) {
-            $table->bigIncrements('id_mouse');
-            $table->integer('id_brand');
-            $table->string('nama_mouse',100);
-            $table->text('deskripsi');
-            $table->integer('harga');
+        Schema::create('Admin', function (Blueprint $table) {
+            $table->bigIncrements('id_admin');
+            $table->string('nama_admin',100);
+            $table->string('username',100);
+            $table->string('password',100);
         });
     }
 
@@ -29,6 +28,6 @@ class CreateMouse extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mouse');
+         Schema::dropIfExists('Admin');
     }
 }
